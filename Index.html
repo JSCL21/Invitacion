@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Invitación Mónica · Tierra Nativa · Floral</title>
+    <!-- Fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef3e9;
+            /* PATRÓN DE FLORES SUTIL - Repetido y muy elegante */
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 15C25 15 20 20 20 25C20 30 25 35 30 35C35 35 40 30 40 25C40 20 35 15 30 15ZM30 18C33.5 18 37 21.5 37 25C37 28.5 33.5 32 30 32C26.5 32 23 28.5 23 25C23 21.5 26.5 18 30 18Z" fill="%23e8b4b0" opacity="0.08"/><path d="M15 45L12 48L15 51L18 48L15 45Z" fill="%23d4a5a0" opacity="0.08"/><path d="M45 10L42 13L45 16L48 13L45 10Z" fill="%23d4a5a0" opacity="0.08"/><circle cx="48" cy="45" r="3" fill="%23e8b4b0" opacity="0.08"/><circle cx="10" cy="15" r="4" fill="%23e8b4b0" opacity="0.08"/></svg>');
+            background-size: 80px 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .invitacion {
+            max-width: 620px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(3px);
+            box-shadow: 0 25px 45px rgba(180, 130, 120, 0.15);
+            border: 1px solid rgba(235, 200, 180, 0.5);
+            position: relative;
+            border-radius: 0;
+            animation: aparecer 0.7s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* BORDES FLORALES SUPERIOR E INFERIOR */
+        .borde-floral-superior {
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="120" height="20" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 10C7 10 5 12 5 15C5 18 7 20 10 20C13 20 15 18 15 15C15 12 13 10 10 10Z" fill="%23dbb6a8" opacity="0.5"/><path d="M30 8L27 11L30 14L33 11L30 8Z" fill="%23c48a7c" opacity="0.5"/><circle cx="50" cy="12" r="4" fill="%23e3b4a8" opacity="0.6"/><path d="M70 6L67 9L70 12L73 9L70 6Z" fill="%23c48a7c" opacity="0.5"/><circle cx="90" cy="15" r="5" fill="%23dbb6a8" opacity="0.4"/><path d="M110 10C107 10 105 12 105 15C105 18 107 20 110 20C113 20 115 18 115 15C115 12 113 10 110 10Z" fill="%23c48a7c" opacity="0.5"/></svg>');
+            background-size: 120px 20px;
+            background-repeat: repeat-x;
+            opacity: 0.8;
+        }
+
+        .contenido-principal {
+            padding: 50px 45px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* DECORACIÓN FLORAL ESQUINAS */
+        .flor-esquina-1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.2rem;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+            color: #b5836e;
+        }
+
+        .flor-esquina-2 {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2.2rem;
+            opacity: 0.2;
+            transform: rotate(15deg);
+            color: #b5836e;
+        }
+
+        .invitacion-titulo {
+            font-size: 1rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #b08674;
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nombre-grande {
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: #4f3630;
+            line-height: 0.95;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            word-break: break-word;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(200, 150, 140, 0.1);
+        }
+
+        .subtitulo-fecha {
+            font-size: 1.3rem;
+            color: #a57c6e;
+            font-style: italic;
+            border-bottom: 2px solid #ebd8cf;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* CAJA DE DETALLES CON FONDO SEMITRANSPARENTE */
+        .detalles-cumple {
+            background: rgba(235, 220, 210, 0.25);
+            backdrop-filter: blur(2px);
+            border-left: 6px solid #dbb6a8;
+            padding: 35px 30px;
+            margin: 30px 0;
+            text-align: left;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .detalle-linea {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            color: #3d2e29;
+        }
+
+        .detalle-linea:last-child {
+            margin-bottom: 0;
+        }
+
+        .icono {
+            font-size: 2rem;
+            margin-right: 20px;
+            min-width: 45px;
+            color: #b5836e;
+        }
+
+        .texto-fecha {
+            font-weight: 700;
+            color: #965a4a;
+            font-size: 1.5rem;
+        }
+
+        .restaurante {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4f3630;
+            line-height: 1.2;
+            margin-top: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* DIRECCIÓN ESPAÑA - CON FONDO FLORAL */
+        .direccion-espana {
+            background: rgba(223, 190, 176, 0.2);
+            backdrop-filter: blur(2px);
+            border: 1px dashed #c48a7c;
+            padding: 28px 20px;
+            margin-top: 25px;
+            color: #2f2420;
+            text-align: center;
+            position: relative;
+        }
+
+        .direccion-espana span {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            color: #4e3530;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .calle {
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .local {
+            font-size: 1.15rem;
+            margin-top: 8px;
+            font-style: normal;
+            color: #5a3e38;
+            font-weight: 500;
+        }
+
+        .espana {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: #8f5e54;
+            font-weight: 600;
+        }
+
+        /* PUNTUALIDAD CON FLORES */
+        .puntual-box {
+            background: linear-gradient(90deg, #e6ccbf, #dbb6a8, #e6ccbf);
+            color: #2f1e1b;
+            padding: 18px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin: 40px 0 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(190, 140, 120, 0.2);
+            position: relative;
+        }
+
+        .puntual-box::before {
+            content: "❀";
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 1.8rem;
+            color: #8c5e52;
+            opacity: 0.4;
+        }
+
+        .puntual-box::after {
+            content: "❀";
+            position: absolute;
+            right: 15px;
+            top: 12px;
+            font-size: 1.8rem;
+            color: #8c5e52;
+            opacity: 0.4;
+        }
+
+        /* BOTÓN ELEGANTE */
+        .boton-confirmar {
+            display: inline-block;
+            background: #7b5a4f;
+            color: white;
+            text-decoration: none;
+            padding: 18px 55px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 6px;
+            border: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 1px solid #7b5a4f;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 8px 20px rgba(123, 90, 79, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boton-confirmar:hover {
+            background: #9c7568;
+            border: 1px solid #9c7568;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(123, 90, 79, 0.35);
+        }
+
+        .nota {
+            margin-top: 28px;
+            color: #8c756c;
+            font-size: 1rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .contenido-principal {
+                padding: 35px 25px;
+            }
+            .nombre-grande {
+                font-size: 3rem;
+            }
+            .restaurante {
+                font-size: 1.5rem;
+            }
+            .calle {
+                font-size: 1.1rem;
+            }
+            .puntual-box {
+                font-size: 1.1rem;
+                letter-spacing: 5px;
+            }
+            .boton-confirmar {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* PATRÓN DE FLORES SUPERPUESTO SUTIL */
+        .patron-floral-fijo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="30" r="8" fill="%23f2d9d0" opacity="0.1"/><circle cx="85" cy="70" r="12" fill="%23f2d9d0" opacity="0.1"/><path d="M60 10L55 18L60 26L65 18L60 10Z" fill="%23e3bcb0" opacity="0.08"/><path d="M10 85L5 92L10 99L15 92L10 85Z" fill="%23e3bcb0" opacity="0.08"/><circle cx="45" cy="80" r="6" fill="%23e8c4bc" opacity="0.1"/><circle cx="75" cy="20" r="5" fill="%23e8c4bc" opacity="0.1"/></svg>');
+            background-size: 150px 150px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Patrón floral fijo super sutil en todo el fondo -->
+    <div class="patron-floral-fijo"></div>
+    
+    <div class="invitacion">
+        <!-- Flores decorativas en las esquinas -->
+        <div class="flor-esquina-1">❀</div>
+        <div class="flor-esquina-2">❀</div>
+        
+        <div class="borde-floral-superior"></div>
+        
+        <div class="contenido-principal">
+            <div class="invitacion-titulo">TE INVITAMOS</div>
+            <div class="nombre-grande">MÓNICA<br>LEBRETON</div>
+            <div class="subtitulo-fecha">14 · FEBRERO · 2026</div>
+            
+            <!-- Detalles con iconos -->
+            <div class="detalles-cumple">
+                <div class="detalle-linea">
+                    <span class="icono">📅</span>
+                    <span class="texto-fecha">14 DE FEBRERO</span>
+                </div>
+                <div class="detalle-linea">
+                    <span class="icono">⏰</span>
+                    <span><span class="texto-fecha">14:00 HORAS</span> · en punto</span>
+                </div>
+                <div class="detalle-linea">
+                    <span class="icono">📍</span>
+                    <span>
+                        <span class="restaurante">TIERRA NATIVA</span>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- DIRECCIÓN ESPAÑA - SIN MAPAS -->
+            <div class="direccion-espana">
+                <span>🌸 DIRECCIÓN EXACTA 🌸</span>
+                <div class="calle">
+                    Calle Bajada Castilla La Mancha, 1
+                </div>
+                <div class="local">
+                    Local 5
+                </div>
+                <div class="espana">
+                    ✦ MADRID · ESPAÑA ✦
+                </div>
+            </div>
+            
+            <!-- Puntualidad con flores -->
+            <div class="puntual-box">
+                SE RUEGA PUNTUALIDAD
+            </div>
+            
+            <!-- Botón de confirmación -->
+            <a href="#" onclick="alert('🌸 ¡Gracias por confirmar! Mónica te espera el 14 de febrero a las 14:00 en Tierra Nativa. Te esperamos con mucha ilusión. 🌸'); return false;" class="boton-confirmar">
+                CONFIRMAR
+            </a>
+            <p class="nota">
+                ❤️ ¡Celebra con nosotros! · Confirma tu asistencia ❤️
+            </p>
+        </div>
+        
+        <div class="borde-floral-superior" style="transform: rotate(180deg);"></div>
+    </div>
+
+    <script>
+        // Confirmación con mensaje personalizado y más elegante
+        document.querySelector('.boton-confirmar').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('🌸✨ ¡Gracias por confirmar! ✨🌸\n\nTe esperamos el 14 de febrero a las 14:00 horas.\nRestaurante Tierra Nativa · Calle Bajada Castilla La Mancha 1, Local 5 · Madrid.\n\n¡Mónica está muy feliz de que vengas!');
+        });
+    </script>
+</body>
+</html>
