@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- ✅ VIEWPORT OBLIGATORIO PARA RESPONSIVE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>💜 Mónica Lebreton · Cumpleaños · Purple Flower</title>
-    <!-- FUENTES IDÉNTICAS A POSTERMYWALL -->
+    <!-- ✅ VIEWPORT OPTIMIZADO PARA CELULAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+    <title>💜 Mónica Lebreton · Cumpleaños</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,78 +20,29 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* ✅ PADDING LATERAL PARA MÓVIL */
-            padding: 16px;
+            padding: 10px;
             font-family: 'Cormorant Garamond', serif;
-            position: relative;
         }
 
-        body::before {
-            content: "💜🌸💜🌸💜";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            font-size: 50px;
-            letter-spacing: 40px;
-            text-align: center;
-            opacity: 0.06;
-            white-space: nowrap;
-            animation: moverFlores 50s linear infinite;
-            pointer-events: none;
-            color: #e5c1e0;
-            z-index: 1;
-        }
-
-        body::after {
-            content: "🌷💜🌷💜🌷";
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            font-size: 50px;
-            letter-spacing: 40px;
-            text-align: center;
-            opacity: 0.06;
-            white-space: nowrap;
-            animation: moverFlores 45s linear reverse infinite;
-            pointer-events: none;
-            color: #e5c1e0;
-            z-index: 1;
-        }
-
-        @keyframes moverFlores {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
-        }
-
-        /* ✅ TARJETA PRINCIPAL - MÁXIMO ANCHO CONTROLADO */
         .invitacion {
-            max-width: 700px;
+            max-width: 650px;
             width: 100%;
             background: rgba(255, 252, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 35px 60px -15px rgba(20, 5, 25, 0.5),
-                        0 0 0 1px rgba(255, 240, 255, 0.3);
+            box-shadow: 0 35px 60px -15px rgba(20, 5, 25, 0.5);
             border-radius: 40px;
             position: relative;
             overflow: hidden;
             z-index: 20;
-            animation: aparecer 0.9s ease;
         }
 
-        @keyframes aparecer {
-            from { opacity: 0; transform: scale(0.96) translateY(15px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        /* ✅ FLORES - TAMAÑO RELATIVO PARA QUE NO DESBORDEN */
+        /* FLORES MÁS PEQUEÑAS */
         .floral-top-right {
             position: absolute;
-            top: -60px;
-            right: -50px;
-            width: 380px;
-            height: 380px;
+            top: -40px;
+            right: -40px;
+            width: 250px;
+            height: 250px;
             background: radial-gradient(circle at 70% 30%, rgba(200, 160, 210, 0.3) 0%, transparent 75%);
             border-radius: 50%;
             z-index: 5;
@@ -102,33 +52,21 @@
         .floral-top-right::before {
             content: "💜🌸💜🌸💜";
             position: absolute;
-            top: 70px;
-            right: 60px;
-            font-size: 100px;
+            top: 50px;
+            right: 40px;
+            font-size: 70px;
             transform: rotate(25deg);
-            opacity: 0.4;
+            opacity: 0.3;
             color: #b68bb0;
-            text-shadow: 0 0 20px #f0d0f0;
-            letter-spacing: 18px;
-        }
-
-        .floral-top-right::after {
-            content: "🌿🌱🌿";
-            position: absolute;
-            top: 190px;
-            right: 120px;
-            font-size: 75px;
-            transform: rotate(-12deg);
-            opacity: 0.25;
-            color: #8a7185;
+            letter-spacing: 15px;
         }
 
         .floral-bottom-left {
             position: absolute;
-            bottom: -70px;
-            left: -60px;
-            width: 400px;
-            height: 400px;
+            bottom: -50px;
+            left: -50px;
+            width: 270px;
+            height: 270px;
             background: radial-gradient(circle at 30% 70%, rgba(190, 150, 200, 0.3) 0%, transparent 80%);
             border-radius: 50%;
             z-index: 5;
@@ -138,212 +76,169 @@
         .floral-bottom-left::before {
             content: "🌷💜🌷💜🌷";
             position: absolute;
-            bottom: 90px;
-            left: 50px;
-            font-size: 105px;
+            bottom: 60px;
+            left: 30px;
+            font-size: 75px;
             transform: rotate(-20deg);
-            opacity: 0.4;
+            opacity: 0.3;
             color: #b68bb0;
-            text-shadow: 0 0 25px #ebc8eb;
-            letter-spacing: 20px;
+            letter-spacing: 18px;
         }
 
-        .floral-bottom-left::after {
-            content: "🍃🌿🍃";
-            position: absolute;
-            bottom: 220px;
-            left: 140px;
-            font-size: 80px;
-            transform: rotate(18deg);
-            opacity: 0.25;
-            color: #7e6a7b;
-        }
-
-        .flor-dispersa {
-            position: absolute;
-            font-size: 32px;
-            opacity: 0.25;
-            animation: flotarLento 12s infinite alternate ease-in-out;
-            z-index: 8;
-            color: #b386aa;
-        }
-
-        @keyframes flotarLento {
-            from { transform: translateY(0px) rotate(0deg); }
-            to { transform: translateY(-20px) rotate(12deg); }
-        }
-
-        .fd1 { top: 12%; left: 7%; animation-delay: 0s; }
-        .fd2 { top: 80%; right: 8%; animation-delay: 3s; }
-        .fd3 { bottom: 15%; left: 12%; animation-delay: 1.5s; }
-        .fd4 { top: 50%; right: 15%; animation-delay: 2s; }
-        .fd5 { bottom: 40%; right: 20%; animation-delay: 4s; }
-        .fd6 { top: 30%; left: 18%; animation-delay: 2.7s; }
-
-        /* ✅ CONTENIDO PRINCIPAL CON PADDING RESPONSIVE */
         .contenido-principal {
-            padding: 60px 50px;
+            padding: 45px 30px;
             text-align: center;
             position: relative;
             z-index: 30;
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
-            margin: 18px;
+            margin: 15px;
             border-radius: 35px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
         }
 
+        /* ✅ TÍTULO COMPACTO */
         .invitacion-titulo {
-            font-size: 1.3rem;
-            letter-spacing: 12px;
+            font-size: 1rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
             color: #755b70;
             font-weight: 400;
             font-family: 'Montserrat', sans-serif;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             background: rgba(235, 215, 235, 0.3);
             display: inline-block;
-            padding: 10px 30px;
+            padding: 6px 18px;
             border-radius: 60px;
-            backdrop-filter: blur(2px);
             border: 1px solid #e8d3e0;
-            /* ✅ RESPONSIVE: PALABRA NO SE ROMPE */
             word-break: break-word;
-            max-width: 100%;
         }
 
+        /* ✅ NOMBRE CORREGIDO - UNA SOLA LÍNEA SIEMPRE */
         .nombre-principal {
-            font-size: 4.8rem;
+            font-size: 3.2rem;
             font-weight: 900;
             color: #2e1c2b;
-            line-height: 0.95;
-            margin: 15px 0 20px;
+            line-height: 1;
+            margin: 8px 0 12px;
             font-family: 'Playfair Display', serif;
-            text-shadow: 2px 2px 0 #f8ecf5, 4px 4px 15px rgba(130, 80, 120, 0.2);
-            letter-spacing: 2px;
-            word-break: break-word;
+            text-shadow: 2px 2px 0 #f8ecf5;
+            letter-spacing: 0px; /* ✅ SIN ESPACIADO */
+            word-break: keep-all; /* ✅ NO ROMPE PALABRAS */
+            white-space: nowrap; /* ✅ FUERZA UNA SOLA LÍNEA */
+            display: block;
+            width: 100%;
+            text-align: center;
             border-top: 2px solid #e9d2e0;
             border-bottom: 2px solid #e9d2e0;
-            display: inline-block;
-            padding: 15px 25px;
-            /* ✅ RESPONSIVE */
-            max-width: 100%;
+            padding: 10px 5px;
         }
 
         .floral-divider {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #a7769b;
-            margin: 15px 0;
-            letter-spacing: 15px;
-            opacity: 0.7;
+            margin: 8px 0;
+            letter-spacing: 8px;
+            opacity: 0.6;
         }
 
         .dia-semana {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #5e3e59;
             font-family: 'Playfair Display', serif;
-            margin: 15px 0 5px;
+            margin: 8px 0 3px;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            word-break: break-word;
+            letter-spacing: 3px;
         }
 
         .fecha {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 900;
             color: #412a3d;
             font-family: 'Playfair Display', serif;
-            margin: 5px 0;
-            letter-spacing: 4px;
-            word-break: break-word;
+            margin: 3px 0;
+            letter-spacing: 1px;
         }
 
         .hora {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: #6d4d66;
             font-weight: 700;
-            margin: 15px 0 25px;
+            margin: 12px 0 18px;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             border-bottom: 1px solid #e0c6d8;
             display: inline-block;
-            padding-bottom: 8px;
-            word-break: break-word;
+            padding-bottom: 6px;
         }
 
         .lugar-label {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #8f6a86;
             font-weight: 600;
-            margin-top: 25px;
-            letter-spacing: 5px;
+            margin-top: 18px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            word-break: break-word;
         }
 
         .lugar-nombre {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 900;
             color: #40253b;
             font-family: 'Playfair Display', serif;
-            margin: 10px 0 5px;
-            letter-spacing: 2px;
-            word-break: break-word;
+            margin: 6px 0 5px;
+            letter-spacing: 1px;
         }
 
+        /* ✅ DIRECCIÓN COMPLETA - SIN CORTES */
         .direccion-completa {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #5c4356;
             font-weight: 600;
-            line-height: 1.6;
-            margin: 15px 0;
+            line-height: 1.5;
+            margin: 12px 0;
             font-family: 'Cormorant Garamond', serif;
             background: rgba(230, 210, 225, 0.2);
-            padding: 15px 30px;
-            display: inline-block;
-            border-radius: 60px;
+            padding: 12px 15px;
+            display: block;
+            border-radius: 50px;
             border: 1px solid #d8bed0;
             word-break: break-word;
-            max-width: 100%;
+            white-space: normal;
         }
 
+        /* ✅ TE ESPERAMOS - UNA SOLA LÍNEA */
         .te-espero {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 700;
             color: #632c5c;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            margin: 35px 0 20px;
+            margin: 25px 0 12px;
             background: linear-gradient(145deg, #f4e3f0, #ecd9e6);
-            padding: 12px 50px;
+            padding: 8px 30px;
             display: inline-block;
             border-radius: 150px;
             border: 2px solid white;
-            box-shadow: 0 6px 0 #a06b92;
-            text-shadow: 1px 1px 0 white;
-            letter-spacing: 4px;
-            word-break: break-word;
-            max-width: 100%;
+            box-shadow: 0 5px 0 #a06b92;
+            letter-spacing: 2px;
+            white-space: nowrap; /* ✅ FUERZA UNA SOLA LÍNEA */
         }
 
         .nombre-final {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: #2c1828;
             font-family: 'Playfair Display', serif;
-            margin-top: 25px;
-            letter-spacing: 6px;
+            margin-top: 18px;
+            letter-spacing: 3px;
             background: white;
-            padding: 12px 40px;
+            padding: 8px 30px;
             display: inline-block;
             border-radius: 30px 80px 30px 80px;
             border: 4px solid #eac0da;
             text-transform: uppercase;
-            word-break: break-word;
-            max-width: 100%;
         }
 
         .boton-confirmar {
@@ -351,118 +246,123 @@
             background: linear-gradient(145deg, #8a6a83, #61405a);
             color: white;
             text-decoration: none;
-            padding: 16px 55px;
-            font-size: 1.3rem;
+            padding: 12px 40px;
+            font-size: 1.1rem;
             font-weight: 600;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             border: none;
             transition: 0.2s;
-            margin-top: 40px;
+            margin-top: 30px;
             border-radius: 100px 30px 100px 30px;
-            box-shadow: 0 12px 0 #3e2c3b, 0 15px 35px rgba(100, 60, 90, 0.35);
+            box-shadow: 0 8px 0 #3e2c3b;
             border: 1px solid #ffecfb;
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
-            word-break: break-word;
-            max-width: 100%;
         }
 
-        .boton-confirmar:hover {
-            background: linear-gradient(145deg, #9a7a93, #73506b);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 0 #3e2c3b, 0 20px 45px rgba(100, 60, 90, 0.45);
-        }
-
-        /* ✅ ✅ ✅ MEDIA QUERY EXCLUSIVO PARA MÓVILES */
+        /* ✅ ✅ MEDIA QUERY PARA CELULAR - TODO CORREGIDO */
         @media (max-width: 550px) {
             .contenido-principal {
-                padding: 35px 20px;
-                margin: 12px;
-            }
-            
-            .invitacion-titulo {
-                font-size: 0.9rem;
-                letter-spacing: 6px;
-                padding: 8px 16px;
-            }
-            
-            .nombre-principal {
-                font-size: 3.2rem;
-                padding: 10px 15px;
-            }
-            
-            .dia-semana {
-                font-size: 1.5rem;
-                letter-spacing: 4px;
-            }
-            
-            .fecha {
-                font-size: 1.6rem;
-                letter-spacing: 3px;
-            }
-            
-            .hora {
-                font-size: 1.4rem;
-            }
-            
-            .lugar-nombre {
-                font-size: 1.6rem;
-            }
-            
-            .direccion-completa {
-                font-size: 1.1rem;
-                padding: 12px 18px;
-            }
-            
-            .te-espero {
-                font-size: 1.6rem;
-                padding: 10px 30px;
-            }
-            
-            .nombre-final {
-                font-size: 1.4rem;
-                padding: 10px 25px;
-                letter-spacing: 4px;
-            }
-            
-            .boton-confirmar {
-                font-size: 1.1rem;
-                padding: 14px 35px;
-                letter-spacing: 4px;
-            }
-            
-            /* ✅ AJUSTE DE FLORES EN MÓVIL */
-            .floral-top-right::before {
-                font-size: 70px;
-                top: 40px;
-                right: 30px;
-            }
-            
-            .floral-bottom-left::before {
-                font-size: 75px;
-                bottom: 50px;
-                left: 20px;
-            }
-        }
-
-        /* ✅ AJUSTE PARA PANTALLAS MUY PEQUEÑAS (MENOS DE 380px) */
-        @media (max-width: 380px) {
-            .nombre-principal {
-                font-size: 2.6rem;
+                padding: 30px 18px;
+                margin: 10px;
             }
             
             .invitacion-titulo {
                 font-size: 0.8rem;
-                letter-spacing: 4px;
+                letter-spacing: 3px;
+                padding: 5px 14px;
+            }
+            
+            /* ✅ NOMBRE - FORZADO A UNA SOLA LÍNEA */
+            .nombre-principal {
+                font-size: 2.4rem !important;
+                white-space: nowrap !important;
+                letter-spacing: -0.5px !important; /* ✅ AÚN MÁS JUNTO */
+                padding: 8px 5px;
+                display: block;
+                width: 100%;
+                overflow: visible;
+                text-overflow: clip;
+            }
+            
+            .dia-semana {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .fecha {
+                font-size: 1.3rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .hora {
+                font-size: 1.1rem;
+            }
+            
+            .lugar-nombre {
+                font-size: 1.4rem;
             }
             
             .direccion-completa {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                padding: 10px 12px;
+            }
+            
+            /* ✅ TE ESPERAMOS - UNA SOLA LÍNEA */
+            .te-espero {
+                font-size: 1.3rem;
+                padding: 6px 20px;
+                white-space: nowrap !important;
+                letter-spacing: 1px;
+            }
+            
+            .nombre-final {
+                font-size: 1.1rem;
+                padding: 6px 20px;
+                letter-spacing: 2px;
             }
             
             .boton-confirmar {
-                font-size: 1rem;
-                padding: 12px 25px;
+                font-size: 0.95rem;
+                padding: 10px 25px;
+                letter-spacing: 3px;
+            }
+        }
+
+        /* ✅ PARA PANTALLAS MUY PEQUEÑAS (< 400px) */
+        @media (max-width: 400px) {
+            .nombre-principal {
+                font-size: 2rem !important;
+                white-space: nowrap !important;
+            }
+            
+            .te-espero {
+                font-size: 1.1rem !important;
+                white-space: nowrap !important;
+                padding: 6px 15px;
+            }
+            
+            .fecha {
+                font-size: 1.1rem;
+            }
+            
+            .direccion-completa {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ✅ PARA CELULARES MUY ESTRECHOS (< 360px) */
+        @media (max-width: 360px) {
+            .nombre-principal {
+                font-size: 1.8rem !important;
+            }
+            
+            .te-espero {
+                font-size: 1rem !important;
+            }
+            
+            .invitacion-titulo {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -470,13 +370,6 @@
 <body>
     <div class="floral-top-right"></div>
     <div class="floral-bottom-left"></div>
-    
-    <div class="flor-dispersa fd1">💜</div>
-    <div class="flor-dispersa fd2">🌸</div>
-    <div class="flor-dispersa fd3">🌷</div>
-    <div class="flor-dispersa fd4">🌼</div>
-    <div class="flor-dispersa fd5">💐</div>
-    <div class="flor-dispersa fd6">🌸</div>
 
     <div class="invitacion">
         <div class="contenido-principal">
@@ -485,8 +378,9 @@
                 TE INVITAMOS AL CUMPLEAÑOS DE
             </div>
             
+            <!-- ✅ NOMBRE CORREGIDO - UNA SOLA LÍNEA -->
             <div class="nombre-principal">
-                MÓNICA<br>LEBRETON
+                MÓNICA LEBRETON
             </div>
             
             <div class="floral-divider">
@@ -500,7 +394,7 @@
                 14 · FEBRERO · 2026
             </div>
             <div class="hora">
-                ⏰ A LAS 14:00 HORAS
+                📍 A LAS 14:00 HORAS
             </div>
             
             <div class="lugar-label">
@@ -509,30 +403,26 @@
             <div class="lugar-nombre">
                 TIERRA NATIVA
             </div>
+            
+            <!-- ✅ DIRECCIÓN COMPLETA -->
             <div class="direccion-completa">
                 Calle Bajada Castilla La Mancha, 1 · Local 5<br>
                 MADRID · ESPAÑA
             </div>
             
+            <!-- ✅ TE ESPERAMOS - UNA SOLA LÍNEA -->
             <div class="te-espero">
-                💜 ¡TE ESPERAMOS! 💜
+                ❤️ ¡TE ESPERAMOS! ❤️
             </div>
             
             <div class="nombre-final">
                 MÓNICA L.
             </div>
             
-            <a href="#" onclick="alert('💜🌸 ¡CONFIRMACIÓN RECIBIDA! 🌸💜\n\n📅 MIÉRCOLES 14 FEBRERO 2026 · 14:00h\n📍 TIERRA NATIVA · C/ Bajada Castilla La Mancha 1, Local 5 · MADRID\n\n✨ ¡Mónica te espera con mucha ilusión! ✨'); return false;" class="boton-confirmar">
+            <a href="#" onclick="alert('💜🌸 ¡CONFIRMACIÓN RECIBIDA! 🌸💜\n\n📅 MIÉRCOLES 14 FEBRERO 2026 · 14:00h\n📍 TIERRA NATIVA · C/ Bajada Castilla La Mancha 1, Local 5 · MADRID\n\n✨ ¡Mónica te espera! ✨'); return false;" class="boton-confirmar">
                 CONFIRMAR
             </a>
         </div>
     </div>
-
-    <script>
-        document.querySelector('.boton-confirmar').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('💜🌸 ¡ASISTENCIA CONFIRMADA! 🌸💜\n\n🎉 MÓNICA LEBRETON\n📅 MIÉRCOLES 14 FEBRERO 2026 · 14:00h\n📍 TIERRA NATIVA · C/ Bajada Castilla La Mancha 1, Local 5 · MADRID\n\n💖 ¡TE ESPERAMOS CON FLORES Y ALEGRÍA! 💖');
-        });
-    </script>
 </body>
 </html>
